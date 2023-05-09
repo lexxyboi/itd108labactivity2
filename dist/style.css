@@ -1,0 +1,102 @@
+body {
+  background-color: #797272;
+}
+
+.navbar {
+  outline: 1px solid rgb(167, 166, 166);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  /* Add this line */
+  padding: 0.5rem 1rem;
+  /* Add this line */
+}
+
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  margin-right: 10px;
+  /* margin-left: -270px; */
+}
+
+.container {
+  /* margin-left: -50px; */
+}
+
+.lexxorecobutton {
+  border: none;
+  background-color: transparent;
+}
+
+a.lexxorecobutton {
+  text-decoration: none;
+}
+
+.container {
+  margin-left: -50px;
+}
+
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .navbar-brand {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navbar-brand {
+    margin-left: 1rem;
+  }
+}
+
+.auth-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Add some space between the buttons */
+.auth-container .btn {
+  margin-bottom: 0.5rem;
+}
+
+.navbar .sign-out {
+  margin-left: auto;
+}
+
+.google-sign-in {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-icon {
+  margin-right: 8px;
+}
+
+.auth-content {
+  text-align: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Add the following lines */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
