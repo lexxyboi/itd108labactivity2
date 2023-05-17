@@ -1,5 +1,6 @@
 body {
   background-color: #797272;
+  
 }
 
 .navbar {
@@ -20,10 +21,6 @@ body {
 .navbar-brand img {
   margin-right: 10px;
   /* margin-left: -270px; */
-}
-
-.container {
-  /* margin-left: -50px; */
 }
 
 .lexxorecobutton {
@@ -99,4 +96,14 @@ a.lexxorecobutton {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/*home.html styles*/
+.table-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

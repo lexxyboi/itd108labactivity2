@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,19 +22,34 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 console.log(app)
-
+//const db = getFirestore(app);
 const googleSignInBtn = document.querySelector('.google-sign-in');
 const signOutBtn = document.querySelector('.sign-out');
-
-
 const provider = new GoogleAuthProvider();
-
 const auth = getAuth(app);
+
+function getDataFromFirestore() {
+  var db = firebase.firestore();
+  var collectionRef = db.collection('gamedb');
+
+  collectionRef.get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+      // Access the document data and do something with it
+      var data = doc.data();
+      // Manipulate the data as needed
+      // Add the data to your DataTable using jQuery or other methods
+    });
+  }).catch(function (error) {
+    console.log("Error getting documents: ", error);
+  });
+}
+
 
 googleSignInBtn.addEventListener('click', () => {
   signInWithPopup(auth, provider).then((result) => {
     const user = result.user;
     alert(`Hello ${user.displayName}!`);
+    window.location.href = "home.html";
   }).catch((error) => {
     const errorMessage = error.message;
     alert(`Error: ${errorMessage}`);
@@ -48,8 +64,9 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     alert("User has signed in!");
     signOutBtn.style.display = 'block';
+    window.location.href = "home.html";
   } else {
-    alert("No user currently");
+    alert("No user currently signed in!");
     signOutBtn.style.display = 'none';
   }
 });
